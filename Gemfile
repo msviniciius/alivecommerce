@@ -75,6 +75,7 @@ gem 'nokogiri'
 gem 'nokogiri-styles'
 
 gem 'simple_form'
+gem 'cocoon'
 gem 'will_paginate', '~> 3.1.0'
 gem 'will_paginate-bootstrap'
 

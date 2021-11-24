@@ -1,15 +1,16 @@
+<div class="card-header with-border">
+  <div class="form-group">
+    <%= simple_form_for @phone_arquivo, multipart: true do |f| %>
+      <div class='row'>
+        <%= f.input :file, as: :file, label: (@phone_arquivo.file? ? 'Arquivo já selecionado' : 'Arquivo'), wrapper_html: {class: "col-sm-3"} %>
+        <%= f.input :ano, as: :select, collection: (2020..Date.today.year + 1).to_a.collect {|d| [d, d]}, placeholder: 'Ano', wrapper_html: {class: "col-sm-2"} %>
+        <%= f.input :mes, placeholder: 'Mês', wrapper_html: {class: "col-sm-3"} %>
+      </div><p>
 
-<%= simple_form_for(@phone_arquivo) do |f| %>
-  <%= f.error_notification %>
-  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-
-  <div class="form-inputs">
-    <%= f.input :mes %>
-    <%= f.input :ano %>
-    <%= f.input :file %>
+    <div class="card-footer">
+      <%= link_to 'Cancelar', phone_arquivos_path, class: "btn btn-default" %>
+      <%= f.button :submit, class: "btn btn-danger" %>
+    </div>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
+</div>
 <% end %>

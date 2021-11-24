@@ -1,1 +1,38 @@
 # encoding: UTF-8
+pt-BR:
+  activerecord:
+    models: &MODELS
+      phone: Smartphone
+      phone_arquivo: Arquivo de Smartphone
+    attributes:
+      name_and_description: &BASIC
+        <<: *MODELS
+        name: Nome
+        description: Descrição
+        created_at: Criação
+        updated_at: Atualização
+      phone_arquivo: &PHONEARQUIVO
+        <<: *BASIC
+        file: Arquivo CSV
+      phone: &PHONE
+        <<: *BASIC
+        model: Modelo
+        brand: Marca
+        manufacturer: Fabricannte
+        chip_type: Tipo Chip
+        so_version: Sistema Operacional
+        screen_type: Display
+        display_size: Tamanhp Display
+        resolution: Resolução
+        back_cam: Câmara Principal
+        front_cam: Câmara Frontal
+        ram: Memória RAM
+        processor: Processador
+        memory_int: Memória Interna
+        color: Cor
+        modaly: Tipo
+        quantity: Quantidade
+        price: Valor
+
+        <<: *PHONE
+        <<: *PHONEARQUIVO

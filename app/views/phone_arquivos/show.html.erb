@@ -1,19 +1,39 @@
-<p id="notice"><%= notice %></p>
+<div class="card card-outline card-danger">
 
-<p>
-  <strong>Mes:</strong>
-  <%= @phone_arquivo.mes %>
-</p>
+  <div class="card-header with-border">
+    <h3 class="card-title">
+      <strong>
+        Visualizar Importação Smartphones
+      </strong>
+    </h3>
+  </div>
 
-<p>
-  <strong>Ano:</strong>
-  <%= @phone_arquivo.ano %>
-</p>
+  <div class="card-body">
+    <div class="row">
+      <div class="col-md-12">
+        <table class="table table-striped table-bordered">
+          <tbody>
+          <tr>
+            <td><strong>Ano</strong></td>
+            <td><%= @phone_arquivo.ano %></td>
+          </tr>
+          <tr>
+            <td><strong>Mes de cadastro</strong></td>
+            <td><%= @phone_arquivo.mes %></td>
+          </tr>
+          <tr>
+            <td><strong>Arquivo</strong></td>
+            <td><%= @phone_arquivo.file %></td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
 
-<p>
-  <strong>File:</strong>
-  <%= @phone_arquivo.file %>
-</p>
-
-<%= link_to 'Edit', edit_phone_arquivo_path(@phone_arquivo) %> |
-<%= link_to 'Back', phone_arquivos_path %>
+  <div class="card-footer">
+    <%= link_to 'Voltar', phone_arquivos_path, class: "btn btn-default" %>
+    <%= link_to 'Nova Importação', new_phone_arquivo_path, class: "btn btn-danger" %>
+    <%= link_to 'Editar Importação', edit_phone_arquivo_path(@phone_arquivo), class: "btn btn-primary" %>
+  </div>
+</div>
