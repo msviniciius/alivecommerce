@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Phone Arquivos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Mes</th>
+      <th>Ano</th>
+      <th>File</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @phone_arquivos.each do |phone_arquivo| %>
+      <tr>
+        <td><%= phone_arquivo.mes %></td>
+        <td><%= phone_arquivo.ano %></td>
+        <td><%= phone_arquivo.file %></td>
+        <td><%= link_to 'Show', phone_arquivo %></td>
+        <td><%= link_to 'Edit', edit_phone_arquivo_path(phone_arquivo) %></td>
+        <td><%= link_to 'Destroy', phone_arquivo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Phone Arquivo', new_phone_arquivo_path %>

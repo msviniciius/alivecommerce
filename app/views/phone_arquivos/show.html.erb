@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Mes:</strong>
+  <%= @phone_arquivo.mes %>
+</p>
+
+<p>
+  <strong>Ano:</strong>
+  <%= @phone_arquivo.ano %>
+</p>
+
+<p>
+  <strong>File:</strong>
+  <%= @phone_arquivo.file %>
+</p>
+
+<%= link_to 'Edit', edit_phone_arquivo_path(@phone_arquivo) %> |
+<%= link_to 'Back', phone_arquivos_path %>
