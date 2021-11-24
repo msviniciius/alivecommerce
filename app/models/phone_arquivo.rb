@@ -3,4 +3,6 @@ class PhoneArquivo < ApplicationRecord
 
   accepts_nested_attributes_for :phones, allow_destroy: true
   validates :mes, :ano, presence: true
+
+  mount_uploader :file, CsvUploader
 end
