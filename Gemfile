@@ -94,6 +94,7 @@ gem 'truncate_html'
 gem 'summernote-rails'
 # https://github.com/activerecord-hackery/ransack
 gem 'ransack'
+gem 'carrierwave', '~> 2.0'
 
 # Boot large ruby/rails apps faster
 gem 'bootsnap', '~> 1.1', '>= 1.1.7'
