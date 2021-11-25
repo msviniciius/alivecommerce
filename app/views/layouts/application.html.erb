@@ -40,15 +40,12 @@
         <!-- Main content -->
         <section class="content">
 
-          <% if yield(:full_box).empty? %>
   					<div class="box box-danger">
   						<div class="box-body">
   							<%= yield %>
   						</div>
   					</div>
-          <% else %>
-            <%= yield %>
-          <% end %>
+
         </section>
       </div>
       <%= render 'shared/footer' %>
