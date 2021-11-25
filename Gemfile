@@ -40,10 +40,12 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara'
   gem 'selenium-webdriver'
-  gem 'rspec-rails', '~> 3.6'
   gem "factory_bot_rails", "~> 4.0"
   gem 'awesome_print'
-
+  # RSpec for Rails-5+ http://relishapp.com/rspec/rspec-rails
+  gem "rspec-rails", "~> 5.0.0"
+  # A library for generating fake data such as names, addresses, etc.
+  gem "faker"
 end
 
 group :development do
@@ -54,6 +56,13 @@ group :development do
   gem 'spring'
   gem 'spring-commands-rspec'
   gem 'spring-watcher-listen', '~> 2.0.0'
+end
+
+group :test do
+  gem "shoulda-matchers", "~> 5.0"
+  gem "simplecov", "~> 0.21.2"
+  gem "simplecov", "~> 0.21.2", require: false
+  gem "database_cleaner-active_record", "~> 2.0"
 end
 
 group :production do
