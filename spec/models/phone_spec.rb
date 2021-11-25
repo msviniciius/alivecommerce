@@ -1,5 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Phone, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe 'associações' do
+    it { is_expected.to belong_to(:phone_arquivo).class_name('PhoneArquivo') }
+  end
 end
