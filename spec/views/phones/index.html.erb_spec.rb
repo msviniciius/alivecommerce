@@ -21,7 +21,7 @@ RSpec.describe "phones/index", type: :view do
         :modaly => "Modaly",
         :quantity => 2,
         :price => "9.99",
-        :phone_arquivos => nil
+        :phone_arquivo => nil
       ),
       Phone.create!(
         :model => "Model",
@@ -41,7 +41,7 @@ RSpec.describe "phones/index", type: :view do
         :modaly => "Modaly",
         :quantity => 2,
         :price => "9.99",
-        :phone_arquivos => nil
+        :phone_arquivo => nil
       )
     ])
   end

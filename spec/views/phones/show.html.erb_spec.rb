@@ -20,7 +20,7 @@ RSpec.describe "phones/show", type: :view do
       :modaly => "Modaly",
       :quantity => 2,
       :price => "9.99",
-      :phone_arquivos => nil
+      :phone_arquivo => nil
     ))
   end
 

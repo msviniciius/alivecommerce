@@ -27,6 +27,62 @@
           </tr>
           </tbody>
         </table>
+        <p>
+        <table class="table table-striped bootstrap-table3">
+          <thead>
+          <tr>
+            <th colspan="25" class="text-center align-middle">Detalhes do(s) Smartphones</th>
+          </tr>
+          <tr>
+            <th style="width: 10px">#</th>
+            <th class="text-center align-middle">Modelo</th>
+            <th class="text-center align-middle"">Marca</th>
+            <th class="text-center align-middle"">Fabricante</th>
+            <th class="text-center align-middle"">Tipo de chip</th>
+            <th class="text-center align-middle"">Verão SO</th>
+            <th class="text-center align-middle"">Tipo Display</th>
+            <th class="text-center align-middle"">Tam. tela</th>
+            <th class="text-center align-middle"">Resolução</th>
+            <th class="text-center align-middle"">Camera principal</th>
+            <th class="text-center align-middle"">Camera Frontal</th>
+            <th class="text-center align-middle"">Memoria ram</th>
+            <th class="text-center align-middle"">Processador</th>
+            <th class="text-center align-middle"">Memoria interna</th>
+            <th class="text-center align-middle"">Cor</th>
+            <th class="text-center align-middle"">Tipo</th>
+            <th class="text-center align-middle"">Quantidade</th>
+            <th class="text-center align-middle"">Preço</th>
+            <th class="text-center align-middle"">Acões</th>
+          </tr>
+          </thead>
+          <tbody>
+          <% @phone_arquivo.phones.each do |ph| %>
+            <tr>
+              <td class="text-center align-middle"><%= ph.id %></td>
+              <td class="text-center align-middle"><%= ph.model %></td>
+              <td class="text-center align-middle"><%= ph.brand %></td>
+              <td class="text-center align-middle"><%= ph.manufacturer %></td>
+              <td class="text-center align-middle"><%= ph.chip_type %></td>
+              <td class="text-center align-middle"><%= ph.so_version %></td>
+              <td class="text-center align-middle"><%= ph.screen_type %></td>
+              <td class="text-center align-middle"><%= ph.display_size %></td>
+              <td class="text-center align-middle"><%= ph.resolution %></td>
+              <td class="text-center align-middle"><%= ph.back_cam %></td>
+              <td class="text-center align-middle"><%= ph.front_cam %></td>
+              <td class="text-center align-middle"><%= ph.ram %></td>
+              <td class="text-center align-middle"><%= ph.processor %></td>
+              <td class="text-center align-middle"><%= ph.memory_int %></td>
+              <td class="text-center align-middle"><%= ph.color %></td>
+              <td class="text-center align-middle"><%= ph.modaly %></td>
+              <td class="text-center align-middle"><%= ph.quantity %></td>
+              <td class='text-center align-middle'><%= ph.price %></td>
+              <td class='text-center'>
+                <%= render 'shared/action_links', object: ph %>
+              </td>
+            </tr>
+          <% end %>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>

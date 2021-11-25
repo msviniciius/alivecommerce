@@ -95,6 +95,7 @@ gem 'summernote-rails'
 # https://github.com/activerecord-hackery/ransack
 gem 'ransack'
 gem 'carrierwave', '~> 2.0'
+gem "roo", "~> 2.8.0"
 
 # Boot large ruby/rails apps faster
 gem 'bootsnap', '~> 1.1', '>= 1.1.7'

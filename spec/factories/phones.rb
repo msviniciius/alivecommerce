@@ -17,6 +17,6 @@ FactoryBot.define do
     modaly { "MyString" }
     quantity { 1 }
     price { "9.99" }
-    phone_arquivos { nil }
+    phone_arquivo { nil }
   end
 end

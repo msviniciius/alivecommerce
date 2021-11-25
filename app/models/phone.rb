@@ -1,3 +1,3 @@
 class Phone < ApplicationRecord
-  belongs_to :phone_arquivos
+  belongs_to :phone_arquivo
 end

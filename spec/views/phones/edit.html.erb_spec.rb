@@ -20,7 +20,7 @@ RSpec.describe "phones/edit", type: :view do
       :modaly => "MyString",
       :quantity => 1,
       :price => "9.99",
-      :phone_arquivos => nil
+      :phone_arquivo => nil
     ))
   end
 
@@ -63,7 +63,7 @@ RSpec.describe "phones/edit", type: :view do
 
       assert_select "input[name=?]", "phone[price]"
 
-      assert_select "input[name=?]", "phone[phone_arquivos_id]"
+      assert_select "input[name=?]", "phone[phone_arquivo_id]"
     end
   end
 end

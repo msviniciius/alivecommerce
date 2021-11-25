@@ -21,17 +21,20 @@ class PhoneArquivosController < ApplicationController
 
   # POST /phone_arquivos or /phone_arquivos.json
   def create
-    @phone_arquivo = PhoneArquivo.new(phone_arquivo_params)
-
+  @phone_arquivo = PhoneArquivo.new(phone_arquivo_params)
     respond_to do |format|
-      if @phone_arquivo.save
-        format.html { redirect_to @phone_arquivo, notice: "Phone arquivo was successfully created." }
-        format.json { render :show, status: :created, location: @phone_arquivo }
+      if @phone_arquivo.phones.any?
+        if @phone_arquivo.valid?
+          if @phone_arquivo.save
+            format.html {redirect_to @phone_arquivo, notice: 'Importação criada com sucesso.'}
+          end
+        end
       else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @phone_arquivo.errors, status: :unprocessable_entity }
+        @phone_arquivo.build_from_csv
       end
+      format.html {render :new}
     end
+    # byebug
   end
 
   # PATCH/PUT /phone_arquivos/1 or /phone_arquivos/1.json
@@ -64,6 +67,11 @@ class PhoneArquivosController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def phone_arquivo_params
-      params.require(:phone_arquivo).permit(:mes, :ano, :file)
+      params.require(:phone_arquivo).permit(:mes, :ano, :file, :file_cache,
+                      phones_attributes: [:id, :_destroy, :model, :brand,
+                      :manufacturer, :chip_type, :so_version, :screen_type,
+                      :display_size, :resolution, :back_cam, :front_cam,
+                      :ram, :processor, :memory_int, :color, :modaly,
+                      :quantity, :price])
     end
 end

@@ -64,6 +64,6 @@ class PhonesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def phone_params
-      params.require(:phone).permit(:model, :brand, :manufacturer, :chip_type, :so_version, :screen_type, :display_size, :resolution, :back_cam, :front_cam, :ram, :processor, :memory_int, :color, :modaly, :quantity, :price, :phone_arquivos_id)
+      params.require(:phone).permit(:model, :brand, :manufacturer, :chip_type, :so_version, :screen_type, :display_size, :resolution, :back_cam, :front_cam, :ram, :processor, :memory_int, :color, :modaly, :quantity, :price, :phone_arquivo_id)
     end
 end

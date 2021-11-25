@@ -5,12 +5,63 @@
         <%= f.input :file, as: :file, label: (@phone_arquivo.file? ? 'Arquivo já selecionado' : 'Arquivo'), wrapper_html: {class: "col-sm-3"} %>
         <%= f.input :ano, as: :select, collection: (2020..Date.today.year + 1).to_a.collect {|d| [d, d]}, placeholder: 'Ano', wrapper_html: {class: "col-sm-2"} %>
         <%= f.input :mes, placeholder: 'Mês', wrapper_html: {class: "col-sm-3"} %>
+        <%= f.input :file_cache, as: :hidden %>
       </div><p>
 
-    <div class="card-footer">
-      <%= link_to 'Cancelar', phone_arquivos_path, class: "btn btn-default" %>
-      <%= f.button :submit, class: "btn btn-danger" %>
-    </div>
+  <% if @phone_arquivo.phones.any? %>
+    <h3>Itens importados</h3>
+      <div class="table-responsive">
+        <table class="table table-bordered table-hover">
+          <thead>
+          <tr>
+            <th colspan="22" class="text-center">Detalhes de Smartphone</th>
+          </tr>
+          <tr>
+            <th style="width: 10px">#</th>
+            <th class="text-center align-middle">Modelo</th>
+            <th class="text-center align-middle"">Marca</th>
+            <th class="text-center align-middle"">Fabricante</th>
+            <th class="text-center align-middle"">Tipo de chip</th>
+            <th class="text-center align-middle"">Verão SO</th>
+            <th class="text-center align-middle"">Tipo Display</th>
+            <th class="text-center align-middle"">Tam. tela</th>
+            <th class="text-center align-middle"">Resolução</th>
+            <th class="text-center align-middle"">Camera principal</th>
+            <th class="text-center align-middle"">Camera Frontal</th>
+            <th class="text-center align-middle"">Memoria ram</th>
+            <th class="text-center align-middle"">Processador</th>
+            <th class="text-center align-middle"">Memoria interna</th>
+            <th class="text-center align-middle"">Cor</th>
+            <th class="text-center align-middle"">Modalidade</th>
+            <th class="text-center align-middle"">Quantidade</th>
+            <th class="text-center align-middle"">Preço</th>
+            <th class="text-center align-middle"">Acões</th>
+          </tr>
+          </thead>
+          <tbody class="todo-list">
+          <%= f.simple_fields_for :phones do |v| %>
+            <%= render 'phone_fields', f: v %>
+          <% end %>
+        </tbody>
+      </table>
+      <% end %>
+    </div><p>
+
+    <table class="table table-bordered table-hover">
+    <% if @phone_arquivo.phones.any? %>
+      <div class="form-group">
+        <div class="col-lg-15">
+          <%= link_to_add_association f, :phones, class: 'btn btn-primary pull-right' do %>
+            <i class='fa fa-plus'></i> Adicionar Item
+            <% end %>
+        </div>
+      </div><p>
+    <% end %>
+    </table>
+
+  <div class="form-group">
+    <%= link_to 'Cancelar', phone_arquivos_path, class: "btn btn-default" %>
+    <%= f.submit (@phone_arquivo.phones.any? ? 'Salvar' : 'Importar Arquivo'), class: "float-left btn btn-danger" %>
   </div>
 </div>
 <% end %>

@@ -18,7 +18,7 @@ class CreatePhones < ActiveRecord::Migration[5.2]
       t.string :modaly
       t.integer :quantity
       t.decimal :price
-      t.references :phone_arquivos, foreign_key: true
+      t.references :phone_arquivo, foreign_key: true
 
       t.timestamps
     end
