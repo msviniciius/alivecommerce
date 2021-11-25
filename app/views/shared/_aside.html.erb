@@ -12,7 +12,9 @@
               </span>
             </a>
             <ul class="treeview-menu">
-             <li> <%= link_to PhoneArquivo.model_name.human.pluralize, phone_arquivos_path %></li>
+              <% if user_signed_in? %>
+                <li> <%= link_to PhoneArquivo.model_name.human.pluralize, phone_arquivos_path %></li>
+             <% end %>
              <li>	<%= link_to Phone.model_name.human.pluralize, phones_path %></li>
             </ul>
           </li>

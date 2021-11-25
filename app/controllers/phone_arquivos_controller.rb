@@ -1,5 +1,6 @@
 class PhoneArquivosController < ApplicationController
   before_action :set_phone_arquivo, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!
 
   # GET /phone_arquivos or /phone_arquivos.json
   def index
