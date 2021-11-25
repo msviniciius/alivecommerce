@@ -3,7 +3,8 @@ class PhoneArquivosController < ApplicationController
 
   # GET /phone_arquivos or /phone_arquivos.json
   def index
-    @phone_arquivos = PhoneArquivo.all
+    @q = PhoneArquivo.ransack(params[:q])
+    @phone_arquivos = @q.result
   end
 
   # GET /phone_arquivos/1 or /phone_arquivos/1.json

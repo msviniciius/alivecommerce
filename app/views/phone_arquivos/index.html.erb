@@ -1,49 +1,73 @@
-<div class="card card-outline card-danger">
-  <div class="card-header with-border">
-    <h3 class="card-title">
-      <strong>
-        <i class="fa fa-list"></i>
-        Listagem
-      </strong>
-    </h3>
-  </div>
-
+<div  class="box-body">
+  <div class="card card-outline card-danger">
     <div class="card-body">
-      <div class="row">
-        <div class="col-md-12">
-          <table class="table table-striped bootstrap-table-paginated">
-            <thead>
-              <tr>
-                <th class='text-center'>Ano</th>
-                <th class='text-center'>Mês</th>
-                <th class='text-center'>Arquivo</th>
-                <th class='text-center'>Criação</th>
-                <th class='text-center' data-width="100px">Ações</th>
-              </tr>
-            </thead>
-          <tbody>
-            <% @phone_arquivos.each do |phone| %>
-              <tr>
-                <td class='text-center'><%= phone.ano %></td>
-                <td class='text-center'><%= phone.mes %></td>
-                <td class='text-center'>
-                  <%= link_to phone.file.url, class: 'd-inline-block text-truncate', style: "max-width: 300px;" do %>
-                    <%= phone.file %>
-                  <% end %>
-                </td>
-                <td class='text-center'><%= phone.created_at %></td>
-                <td class='text-center'>
-                  <%= render 'shared/action_links', object: phone %>
-                </td>
-              </tr>
-            <% end %>
-          </tbody>
-        </table>
-      </div>
+      <%= simple_form_for :q, url: @url, html: {method: :get} do |f| %>
+        <div class="row">
+          <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12">
+            <label>Ano</label>
+            <%= f.input :ano_eq, required: false, label: false %>
+          </div>
+          <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12">
+            <label>Mês</label>
+            <%= f.input :mes_eq, required: false, label: false %>
+          </div>
+        </div>
+        <p>
+        <div class="col-12"></div>
+        <%= f.submit "Pesquisar", class: 'btn btn-danger' %>
+      <% end %>
     </div>
   </div>
+</div>
 
-  <div class="card-footer">
-    <%= link_to 'Criar', new_phone_arquivo_path, class: "btn btn-danger" %>
+<div  class="box-body">
+  <div class="card card-outline card-danger">
+    <div class="card-header with-border">
+      <h3 class="card-title">
+        <strong>
+          <i class="fa fa-list"></i>
+          Listagem
+        </strong>
+      </h3>
+    </div>
+
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-12">
+            <table class="table table-striped bootstrap-table-paginated">
+              <thead>
+                <tr>
+                  <th class='text-center'>Ano</th>
+                  <th class='text-center'>Mês</th>
+                  <th class='text-center'>Arquivo</th>
+                  <th class='text-center'>Criação</th>
+                  <th class='text-center' data-width="100px">Ações</th>
+                </tr>
+              </thead>
+            <tbody>
+              <% @phone_arquivos.each do |phone| %>
+                <tr>
+                  <td class='text-center'><%= phone.ano %></td>
+                  <td class='text-center'><%= phone.mes %></td>
+                  <td class='text-center'>
+                    <%= link_to phone.file.url, class: 'd-inline-block text-truncate', style: "max-width: 300px;" do %>
+                      <%= phone.file %>
+                    <% end %>
+                  </td>
+                  <td class='text-center'><%= phone.created_at %></td>
+                  <td class='text-center'>
+                    <%= render 'shared/action_links', object: phone %>
+                  </td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-footer">
+      <%= link_to 'Criar', new_phone_arquivo_path, class: "btn btn-danger" %>
+    </div>
   </div>
 </div>
