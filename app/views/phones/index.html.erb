@@ -1,62 +1,90 @@
-<div class="card card-outline card-danger">
-  <div class="card-header with-border">
-    <h3 class="card-title">
-      <strong>
-        <i class="fa fa-list"></i>
-        Smarphones
-      </strong>
-    </h3>
-  </div>
-
+<div  class="box-body">
+  <div class="card card-outline card-danger">
     <div class="card-body">
-      <div class="row">
-        <div class="col-md-12">
-          <table class="table table-striped bootstrap-table-paginated">
-            <thead>
-              <tr>
-                <th class='text-center'>Modelo</th>
-                <th class='text-center'>Marca</th>
-                <th class='text-center'>Fabricante</th>
-                <th class='text-center'>Tipo de Chip"</th>
-                <th class='text-center'>Versão S.O</th>
-                <th class='text-center'>Display</th>
-                <th class='text-center'>Tam. Tela</th>
-                <th class='text-center'>Resolução</th>
-                <th class='text-center'>Câmera Principal</th>
-                <th class='text-center'>Câmera Frontal</th>
-                <th class='text-center'>Memória RAM</th>
-                <th class='text-center'>Processador</th>
-                <th class='text-center'>Memória Interna</th>
-                <th class='text-center'>Cor</th>
-                <th class='text-center'>Modalidade</th>
-                <th class='text-center'>Quantidade</th>
-                <th class='text-center'>Preço</th>
-              </tr>
-            </thead>
-          <tbody>
-            <% @phones.each do |phone| %>
-              <tr>
-                <td><%= phone.model %></td>
-                <td><%= phone.brand %></td>
-                <td><%= phone.manufacturer %></td>
-                <td><%= phone.chip_type %></td>
-                <td><%= phone.so_version %></td>
-                <td><%= phone.screen_type %></td>
-                <td><%= phone.display_size %></td>
-                <td><%= phone.resolution %></td>
-                <td><%= phone.back_cam %></td>
-                <td><%= phone.front_cam %></td>
-                <td><%= phone.ram %></td>
-                <td><%= phone.processor %></td>
-                <td><%= phone.memory_int %></td>
-                <td><%= phone.color %></td>
-                <td><%= phone.modaly %></td>
-                <td><%= phone.quantity %></td>
-                <td><%= phone.price %></td>
-              </tr>
-            <% end %>
-          </tbody>
-        </table>
+      <%= simple_form_for :q, url: @url, html: {method: :get} do |f| %>
+        <div class="row">
+          <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12">
+            <label>Fabricante</label>
+            <%= f.input :manufacturer_cont, required: false, label: false %>
+          </div>
+          <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12">
+            <label>Modelo</label>
+            <%= f.input :model_cont, required: false, label: false %>
+          </div>
+          <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12">
+            <label>Modalidade</label>
+            <%= f.input :modaly_cont, required: false, label: false, input_html: {placeholder: "Pre pago ou Pos Pago"} %>
+          </div>
+        </div>
+        <p>
+        <div class="col-12"></div>
+        <%= f.submit "Pesquisar", class: 'btn btn-danger' %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div  class="box-body">
+  <div class="card card-outline card-danger">
+    <div class="card-header with-border">
+      <h3 class="card-title">
+        <strong>
+          <i class="fa fa-list"></i>
+          Smarphones
+        </strong>
+      </h3>
+    </div>
+
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-12">
+            <table class="table table-striped bootstrap-table-paginated">
+              <thead>
+                <tr>
+                  <th class='text-center'>Modelo</th>
+                  <th class='text-center'>Marca</th>
+                  <th class='text-center'>Fabricante</th>
+                  <th class='text-center'>Tipo de Chip"</th>
+                  <th class='text-center'>Versão S.O</th>
+                  <th class='text-center'>Display</th>
+                  <th class='text-center'>Tam. Tela</th>
+                  <th class='text-center'>Resolução</th>
+                  <th class='text-center'>Câmera Principal</th>
+                  <th class='text-center'>Câmera Frontal</th>
+                  <th class='text-center'>Memória RAM</th>
+                  <th class='text-center'>Processador</th>
+                  <th class='text-center'>Memória Interna</th>
+                  <th class='text-center'>Cor</th>
+                  <th class='text-center'>Modalidade</th>
+                  <th class='text-center'>Quantidade</th>
+                  <th class='text-center'>Preço</th>
+                </tr>
+              </thead>
+            <tbody>
+              <% @phones.each do |phone| %>
+                <tr>
+                  <td><%= phone.model %></td>
+                  <td><%= phone.brand %></td>
+                  <td><%= phone.manufacturer %></td>
+                  <td><%= phone.chip_type %></td>
+                  <td><%= phone.so_version %></td>
+                  <td><%= phone.screen_type %></td>
+                  <td><%= phone.display_size %></td>
+                  <td><%= phone.resolution %></td>
+                  <td><%= phone.back_cam %></td>
+                  <td><%= phone.front_cam %></td>
+                  <td><%= phone.ram %></td>
+                  <td><%= phone.processor %></td>
+                  <td><%= phone.memory_int %></td>
+                  <td><%= phone.color %></td>
+                  <td><%= phone.modaly %></td>
+                  <td><%= phone.quantity %></td>
+                  <td><%= phone.price %></td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   </div>

@@ -3,7 +3,8 @@ class PhonesController < ApplicationController
 
   # GET /phones or /phones.json
   def index
-    @phones = Phone.all
+    @q = Phone.ransack(params[:q])
+    @phones = @q.result
   end
 
   # GET /phones/1 or /phones/1.json
