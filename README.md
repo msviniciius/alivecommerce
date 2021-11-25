@@ -25,99 +25,93 @@ libncurses5-dev libffi-dev libgdbm-dev libpq-dev curl ruby-full`
 $ sudo apt-get install git
 ```
 
-4. Configure o Git:
-```
-$ git config --global user.name '<seu nome>'
-$ git config --global user.email <seu email>
-```
-
-5. Instalando a versão do Ruby desejada
+4. Instalando a versão do Ruby desejada
 ```
 $ rvm install 2.7.4
 ```
 
-6. Verifique a versão instalada
+5. Verifique a versão instalada
 ```
 $ rvm list
 ```
 
-7. Use uma versão específica e a torne padrão
+6. Use uma versão específica e a torne padrão
 ```
 $ rvm use 2.7.4 --default
 ```
 
 #### Rails
 
-8. Instale o Rails
+7. Instale o Rails
 ```
 $ gem install rails -v 5.2
 ```
 
-9. Verifique se o Rails foi instalado
+8. Verifique se o Rails foi instalado
 ```
 $ rails -v
 ```
 
 #### NodeJS
 
-10. Instale o NodeJS
+9. Instale o NodeJS
 ```
 $ sudo apt-get install nodejs
 ```
 
-11. Verifique se o NodeJS foi instalado
+10. Verifique se o NodeJS foi instalado
 ```
 $ nodejs --version
 ```
 
-12. Instale o NPM
+11. Instale o NPM
 ```
 $ sudo apt install npm
 ```
 
 #### Yarn
 
-13. Instale o Yarn
+12. Instale o Yarn
 ```
 $ npm install --global yarn
 ```
 
-14. Verifique se o Yarn foi instalado
+13. Verifique se o Yarn foi instalado
 ```
 $ yarn --version
 ```
 
 #### PostgreSQL
 
-15. Instale o PostgreSQL
+14. Instale o PostgreSQL
 ```
 $ sudo apt-get install postgresql postgresql-contrib libpq-dev
 ```
 
-16. Verifique se o PostgreSQL foi instalado
+15. Verifique se o PostgreSQL foi instalado
 ```
 $ psql --version
 ```
 
 #### Bundler
 
-17. Instale o gerenciador de pacotes do Ruby:
+16. Instale o gerenciador de pacotes do Ruby:
 ```
 $ gem install bundler:2.2.32
 ```
 
 #### Configurações
 
-18. Crie o arquivo `config/database.yml`
+17. Crie o arquivo `config/database.yml`
 
-19. Instale as dependências JavaScript:
+18. Instale as dependências JavaScript:
 ```
 $ yarn install 1.22.15
 ```
 
 #### Iniciando
 
-20. Inicie a aplicação:
+19. Inicie a aplicação:
 ```
 $ rails s
 
