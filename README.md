@@ -126,4 +126,4 @@ $ rails db:migrate
 - Ruby-2.7.4
 - Rails 5.2.0
 - Node v17.1.0
-- Yarn 1.22.15
+- Yarn 1.22.15..
