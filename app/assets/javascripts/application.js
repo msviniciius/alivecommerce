@@ -47,3 +47,11 @@ function display_fields(link) {
   }
   $(link).parent().next().toggle("fast");
 }
+
+$(document).ready(function() {
+  $(".add_phone_item").
+  data("association-insertion-method", 'append').
+  data("association-insertion-node", function(link){
+      return link.parent().parent().parent().find('table')
+  });
+});
